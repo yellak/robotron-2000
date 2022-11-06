@@ -1,7 +1,9 @@
-const button_calcular = document.getElementById('calcular')
+const button_calcular = document.querySelector('#calcular');
+const resultado = document.querySelector(".resultado");
 
-button_calcular.addEventListener('click', onCalcularClick)
+button_calcular.addEventListener('click', onCalcularClick);
 
-function onCalcularClick() {
-    alert('Fui Clicado')
-}
+function onCalcularClick(event) {
+    resultado.innerHTML = 'Fui Clicado'
+    console.log('clicked')
+};
