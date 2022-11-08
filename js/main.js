@@ -1,5 +1,12 @@
+const control = document.querySelectorAll("[data-operation]")
+control.forEach((element) => {
+    element.addEventListener("click", (event) => {
+        manipulateValue(event.target.parentNode, event.target.dataset.operation)
+    })
+});
+
 function manipulateValue(parent, action) {
-    piece = parent.querySelector(".controle-contador")
+    piece = parent.querySelector("[data-counter]")
     if (action === "+") {
         piece.value = parseInt(piece.value) + 1
         return
@@ -9,10 +16,3 @@ function manipulateValue(parent, action) {
         return
     }
 }
-
-const control = document.querySelectorAll(".controle-ajuste")
-control.forEach((element) => {
-    element.addEventListener("click", (event) => {
-        manipulateValue(event.target.parentNode, event.target.textContent)
-    })
-});
